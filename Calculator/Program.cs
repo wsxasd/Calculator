@@ -15,49 +15,48 @@ namespace Calculator
         static double GetFisrtNumber()
         {
             Console.Write("Enter first number: ");
-            double first_number = Convert.ToDouble(Console.ReadLine());
-            if (IsDigit(first_number))
-            return first_number;
+            double firstNumber = Convert.ToDouble(Console.ReadLine());
+            return firstNumber;
         }
 
         static double GetSecondtNumber()
         {
             Console.Write("Enter second number: ");
-            double second_number = Convert.ToDouble(Console.ReadLine());
-            return second_number;
+            double secondNumber = Convert.ToDouble(Console.ReadLine());
+            return secondNumber;
         }
 
         static string GetOperator()
         {
             Console.Write("Enter operator: ");
-            string action_operator = Console.ReadLine();
-            return action_operator;
+            string actionOperator = Console.ReadLine();
+            return actionOperator;
         }
 
-        public static void GetResult(double first_number, double second_number)
+        public static void GetResult(double firstNumber, double secondNumber)
         {
             switch (GetOperator())
             {
                 case "+":
-                    Console.WriteLine("Result: " + GetSum(first_number, second_number));
+                    Console.WriteLine("Result: " + GetSum(firstNumber, secondNumber));
                     break;
                 case "-":
-                    Console.WriteLine("Result: " + GetSubtraction(first_number, second_number));
+                    Console.WriteLine("Result: " + GetSubtraction(firstNumber, secondNumber));
                     break;
                 case "*":
-                    Console.WriteLine("Result: " + GetMultiplication(first_number, second_number));
+                    Console.WriteLine("Result: " + GetMultiplication(firstNumber, secondNumber));
                     break;
                 case "/":
-                    Console.WriteLine("Result: " + GetDivision(first_number, second_number));
+                    Console.WriteLine("Result: " + GetDivision(firstNumber, secondNumber));
                     break;
             }
         }
 
         static void Main(string[] args)
         {
-            double first_number = GetFisrtNumber();
-            double second_number = GetSecondtNumber();
-            GetResult(first_number, second_number);
+            double firstNumber = GetFisrtNumber();
+            double secondNumber = GetSecondtNumber();
+            GetResult(firstNumber, secondNumber);
             Console.ReadKey();
         }
     }
