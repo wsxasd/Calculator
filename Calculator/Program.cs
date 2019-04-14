@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Calculator
 {
@@ -12,51 +13,46 @@ namespace Calculator
 
         static double GetSubtraction(double a, double b) => a - b;
 
-        static double GetFisrtNumber()
+        static double GetFirstNumber()
         {
             Console.Write("Enter first number: ");
-            double firstNumber = Convert.ToDouble(Console.ReadLine());
-            return firstNumber;
+            return Convert.ToDouble(Console.ReadLine());
         }
 
-        static double GetSecondtNumber()
+        static double GetSecondNumber()
         {
             Console.Write("Enter second number: ");
-            double secondNumber = Convert.ToDouble(Console.ReadLine());
-            return secondNumber;
+            return Convert.ToDouble(Console.ReadLine());
         }
 
         static string GetOperator()
         {
             Console.Write("Enter operator: ");
-            string actionOperator = Console.ReadLine();
-            return actionOperator;
+            return Console.ReadLine();
         }
 
-        public static void GetResult(double firstNumber, double secondNumber)
+        public static string GetResult(double firstNumber, double secondNumber)
         {
             switch (GetOperator())
             {
                 case "+":
-                    Console.WriteLine("Result: " + GetSum(firstNumber, secondNumber));
-                    break;
+                    return "Result: " + GetSum(firstNumber, secondNumber);
                 case "-":
-                    Console.WriteLine("Result: " + GetSubtraction(firstNumber, secondNumber));
-                    break;
+                    return  "Result: " + GetSubtraction(firstNumber, secondNumber);
                 case "*":
-                    Console.WriteLine("Result: " + GetMultiplication(firstNumber, secondNumber));
-                    break;
+                    return  "Result: " + GetMultiplication(firstNumber, secondNumber);
                 case "/":
-                    Console.WriteLine("Result: " + GetDivision(firstNumber, secondNumber));
-                    break;
+                    return  "Result: " + GetDivision(firstNumber, secondNumber);
+                default:
+                    return "None";
             }
         }
 
         static void Main(string[] args)
         {
-            double firstNumber = GetFisrtNumber();
-            double secondNumber = GetSecondtNumber();
-            GetResult(firstNumber, secondNumber);
+            double firstNumber = GetFirstNumber();
+            double secondNumber = GetSecondNumber();
+            Console.WriteLine(GetResult(firstNumber, secondNumber));
             Console.ReadKey();
         }
     }
